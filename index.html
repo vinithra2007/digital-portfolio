@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="ta">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>vini— Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14; --panel: rgba(255,255,255,0.03); --muted:#9fb7c4; --neon1:#30f0d6; --neon2:#00a8ff; --accent:#ff6b6b; --glass: rgba(255,255,255,0.04);
+      --radius:16px; --pad:20px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Montserrat,system-ui,Arial; background: radial-gradient(800px 400px at 80% 10%, rgba(0,168,255,0.07), transparent), linear-gradient(180deg,#061018 0%, #07121a 100%); color:#e6f6f8}/* Right vertical nav like your screenshots */
+.right-nav{position:fixed; right:8px; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:14px; align-items:flex-end; z-index:80}
+.right-nav a{writing-mode:vertical-rl; transform:rotate(180deg); text-decoration:none; color:var(--muted); padding:6px 10px; border-radius:8px}
+.right-nav a.active{color:var(--neon2); font-weight:700}
+
+.container{max-width:1100px; margin:40px auto; padding:0 24px}
+
+/* Hero */
+.hero{display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:center; margin-top:20px}
+.hero-left{padding:var(--pad)}
+.badge{display:inline-block; padding:12px 8px; border-radius:999px; background:linear-gradient(90deg, rgba(48,240,214,0.06), rgba(0,168,255,0.06)); color:var(--neon1); border:1px solid rgba(48,240,214,0.12); font-weight:600}
+h1{font-size:42px; margin:14px 0; line-height:1}
+h1 .name{background: linear-gradient(90deg,var(--accent), var(--neon2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+p.lead{color:var(--muted); max-width:620px}
+.cta{margin-top:18px; display:flex; gap:12px}
+.btn{padding:12px 16px; border-radius:12px; border:0; cursor:pointer; font-weight:600}
+.btn-primary{background:linear-gradient(90deg,var(--neon1),var(--neon2)); color:#001521}
+.btn-outline{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted)}
+
+.portrait{border-radius:18px; overflow:hidden; border:2px solid rgba(48,240,214,0.12); padding:8px; background:linear-gradient(180deg, rgba(48,240,214,0.02), transparent)}
+.portrait img{display:block; width:100%; height:100%; object-fit:cover; border-radius:12px}
+.portrait img{floatImage 7s ease-in-out infinite;
+    border: 4px solid rgb(0, 255, 255); /* Gold border */
+    box-shadow: 0px 10px 20px rgba(255, 215, 0, 0.5)} /* Gold glow *
+
+section{margin-top:48px}
+.section-head{display:flex; align-items:center; gap:18px}
+.section-title{font-size:28px; letter-spacing:1px}
+.neon{color:var(--neon2); text-shadow:0 6px 18px rgba(0,168,255,0.18)}
+
+/* About / two columns */
+.about-grid{display:grid; grid-template-columns: 360px 1fr; gap:22px; align-items:start}
+.card{background:var(--panel); border-radius:var(--radius); padding:18px; border:1px solid rgba(255,255,255,0.03); box-shadow: 0 10px 30px rgba(2,6,10,0.6)}
+.card img{width:80%; border-radius:12px}
+.edu-list{color:var(--muted); margin:8px 0 0}
+.edu-list li{margin:8px 0}
+
+/* Certificates grid */
+.cert-grid{display:grid; grid-template-columns: repeat(2,1fr); gap:18px}
+.cert-thumb{height:160px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.03)}
+.cert-thumb img{width:100%; height:100%; object-fit:cover}
+
+/* Projects */
+.projects-list{display:flex; flex-direction:column; gap:14px}
+.proj{display:flex; gap:14px; align-items:center}
+.proj img{width:100%;object-fit:cover; border-radius:12px}
+
+/* Skills */
+.skills-grid{display:grid; grid-template-columns: repeat(3,1fr); gap:16px}
+.skill-card{background:var(--glass); padding:18px; border-radius:12px; min-height:120px}
+.skill-card h4{color:#ffd57a; margin:0 0 8px}
+.skill-card p{color:var(--muted); margin:0}
+
+/* Contact */
+.contact{display:grid; grid-template-columns:1fr 360px; gap:20px}
+.contact input, .contact textarea{width:100%; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit}
+
+footer{margin:60px 0 40px; text-align:center; color:var(--muted)}
+
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .right-nav{right:4px}
+  .skills-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}
+}
+
+  </style>
+</head>
+<body>
+  <!-- Right vertical nav (matches your design) -->
+  <nav class="right-nav">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#certs">Certificates</a>
+    <a href="#projects">Project</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>  <div class="container">
+    <!-- HERO / HOME -->
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <div class="badge">Portfolio</div>
+        <h1>Hello, it's me <span class="name">vinithra <B></B></span><br><small style="font-weight:500;color:var(--muted)">And I'm a student</small></h1>
+        <p class="lead">I am a 2nd year BCA student passionate about front-end development. This portfolio highlights my education, certificates, projects and skills. I'm learning Python, HTML, CSS and JavaScript.</p>
+        <div class="cta">
+          <a class="btn btn-outline" href="image/p2.jpg">Download CV</a>
+        </div>
+      </div><div class="portrait card" style="width:100%">
+    <!-- replace these filenames with the exact image files you uploaded -->
+    <img src="images/p1.jpeg" alt="vini portrait">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-head">
+    <h2 class="section-title neon">ABOUT ME</h2>
+  </div>
+  <div class="about-grid" style="margin-top:18px">
+    <div class="card">
+      <h3 style="margin:0 0 8px">BCA Student — Education</h3>
+      <p class="muted">I study at S.I.V.E.T College, University of Madras. I completed my SSLC and HSC with good marks and currently learning web development and Python. I enjoy building attractive UI and practicing responsive design.</p>
+
+      <ul class="edu-list">
+        <li><strong>SSLC (10th):</strong>chirst king girls higher secondary school-60.2%</li>
+        <li><strong>HSC (12th):</strong>chirst king girls higher secondary school-77% </li>
+        <li><strong>College:</strong> S.I.V.E.T College, University of Madras (BCA — 2nd year)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <!-- big portrait on the right (used home/about screenshot) -->
+      <img src="images/p5.jpeg" alt="portrait large">
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certs">
+  <div class="section-head">
+    <h2 class="section-title neon">MY CERTIFICATES</h2>
+  </div>
+  <div class="cert-grid" style="margin-top:18px">
+    <div class="cert-thumb card"><img src="images/p3.jpeg" alt="certificate 1"/></div>
+    <div class="cert-thumb card"><img src="images/p4.jpeg" alt="certificate 2"/></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-head">
+    <h2 class="section-title neon">LATEST PROJECT</h2>
+  </div>
+  <div class="projects-list" style="margin-top:18px">
+    <div class="proj card">
+      <img src="images/p6.jpeg" alt="project screenshot">
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-head"><h2 class="section-title neon">SKILLS & EXPERTISE</h2></div>
+  <div class="skills-grid" style="margin-top:18px">
+    <div class="skill-card card">
+      <h4>Company Skills</h4>
+      <p>- Communication<br>- Team Coordination<br>- Time Management</p>
+    </div>
+    <div class="skill-card card">
+      <h4>Computer Knowledge</h4>
+      <p>- Microsoft Office<br>- Excel<br>- PowerPoint</p>
+    </div>
+    <div class="skill-card card">
+      <h4>Basics</h4>
+      <p>- Web Developer basics<br>- Web Applications</p>
+    </div>
+    <div class="skill-card card">
+      <h4>programming Languages</h4>
+      <p>- python<br>- html<br>-css<br>-c<br>-c++</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-head"><h2 class="section-title neon">CONTACT</h2></div>
+  <div class="contact" style="margin-top:18px">
+    <form class="card" onsubmit="event.preventDefault(); alert('Message sent — thank you!'); this.reset();">
+      <input placeholder="first name" required>
+       <input placeholder="last name" required>
+      <input placeholder="Email or phone" required style="margin-top:8px">
+      <textarea placeholder="Message" style="margin-top:8px"></textarea>
+      <button class="btn btn-primary" style="margin-top:10px">Send Message</button>
+      <form action="emailto:vinithra2007@gmail.com"method="post"target="_blank"></form>
+    </form>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> vinithra</footer>
+
+  </div>  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    // smooth scroll for nav
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click', e=>{ e.preventDefault(); document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'}); }));
+  </script></body>
+</html>
